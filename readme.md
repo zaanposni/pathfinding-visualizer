@@ -1,6 +1,7 @@
 # Pathfinding
 
-This project is my first attempt to implement a Pathfinding Visualizer.<br/>For now it contains a basic implementation of the A* algorithm.
+This project is my first attempt to implement a Pathfinding Visualizer.<br/>
+For now it contains a basic implementation of the A* algorithm.
 
 Start and Endnode and Border are dynamicaly assignable at startup.<br/>
 The program then visualizes the algorithm with a predefined sleeprate.
@@ -9,10 +10,11 @@ The program then visualizes the algorithm with a predefined sleeprate.
 ## Example
 
 ![Example Image](example.png)
+![Example Image](savefilexample.png)
 
 ## Dependency
 
-```
+```bash
 sudo apt-get install libsfml-dev
 ```
 
@@ -22,3 +24,12 @@ sudo apt-get install libsfml-dev
 /usr/bin/g++ -g ./main.cpp -o ./main -lsfml-graphics -lsfml-window -lsfml-system
 ```
 
+## Save file
+
+After painting the grid, the programm saves your grid configuration to a save file called "newgrid.txt".<br/>
+If this file already exists it does not get overwritten.<br/>
+Specify a file to open on startup and load a saved grid:
+```bash
+./main newgrid.txt
+```
+If you have downloaded the repository the file "examplegrid.txt" holds the config for the grid you can see above.
