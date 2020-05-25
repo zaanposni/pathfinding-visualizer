@@ -27,9 +27,8 @@ sudo apt-get install libsfml-dev
 ## Usage
 
 Following parameters are available:
-
-<size> (int) to specify x and y size for a new grid.
-<filepath> (string) a relative path to a save file (see below).
+- size (int) to specify x and y size for a new grid.
+- filepath (string) a relative path to a save file (see below).
 
 Note: You cannot use both parameters at once, as the size is saved in the save file.
 
