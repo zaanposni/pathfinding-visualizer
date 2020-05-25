@@ -24,6 +24,16 @@ sudo apt-get install libsfml-dev
 /usr/bin/g++ -g ./main.cpp -o ./main -lsfml-graphics -lsfml-window -lsfml-system
 ```
 
+## Usage
+
+Following parameters are available:
+
+<size> (int) to specify x and y size for a new grid.
+<filepath> (string) a relative path to a save file (see below).
+
+Note: You cannot use both parameters at once, as the size is saved in the save file.
+
+
 ## Save file
 
 After painting the grid, the programm saves your grid configuration to a save file called "newgrid.txt".<br/>

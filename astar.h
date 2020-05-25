@@ -42,6 +42,7 @@ class AstarPathfinding
             openSet.push_back(startPos);
             while (openSet.size() > 0)
             {
+                if (window.checkForKeyboardInterrupt()) { return; }  // window still is responsive and space can cancel path finding
                 Node currentNode = openSet[0];
                 for (int i=1; i < openSet.size(); i++)
                 {
