@@ -125,6 +125,7 @@ class CustomWindow
                 
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
                 {
+                    while (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) { }
                     return true;
                 }
                 return false;
