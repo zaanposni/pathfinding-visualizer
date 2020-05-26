@@ -111,10 +111,8 @@ int startPathfinding(std::string filePath)
 	std::string line;
 
 	int counter = 0;
-	std::cout << "test2" << std::endl;
 	while (std::getline(infile, line))
 	{
-		std::cout << "test" << std::endl;
 		std::istringstream iss(line);
 		int x, y;
 		if (!(iss >> x >> y))
