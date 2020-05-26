@@ -14,9 +14,12 @@ The program then visualizes the algorithm with a predefined sleeprate.
 
 ## Dependency
 
+- sfml
 ```bash
 sudo apt-get install libsfml-dev
 ```
+
+- [args](https://github.com/Taywee/args) by [@Taywee](https://github.com/Taywee)
 
 ## Compile
 
@@ -26,9 +29,18 @@ sudo apt-get install libsfml-dev
 
 ## Usage
 
-Following parameters are available:
-- size (int) to specify x and y size for a new grid.
-- filepath (string) a relative path to a save file (see below).
+```
+OPTIONS:
+
+      -h, --help                        Display this help menu
+      -s[size], --size=[size]           Set the size of a new created grid
+      -f[savefile],
+      --savefile=[savefile]             specify a path to a loadable savefile
+      --saveat=[saveat]                 specify a path to save the new painted
+                                        grid to
+      --fps=[framerate],
+      --framerate=[framerate]           specify sleep time for each step
+```
 
 Note: You cannot use both parameters at once, as the size is saved in the save file.
 
@@ -39,6 +51,6 @@ After painting the grid, the programm saves your grid configuration to a save fi
 If this file already exists it does not get overwritten.<br/>
 Specify a file to open on startup and load a saved grid:
 ```bash
-./main newgrid.txt
+./main --savefile examplegrid.txt
 ```
 If you have downloaded the repository the file "examplegrid.txt" holds the config for the grid you can see above.
