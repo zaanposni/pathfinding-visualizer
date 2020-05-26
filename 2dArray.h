@@ -8,10 +8,10 @@
 class CustomGrid
 {   
     private:
-        int size;
         Node *values;
     
     public:
+        int size;
         Node startNode;
         Node targetNode;
         std::vector<Node> border;
