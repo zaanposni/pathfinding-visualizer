@@ -398,5 +398,3 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/c++,visualstudio,visualstudiocode
 build/
 .vscode/
-main
-CMakeLists.txt

@@ -24,7 +24,11 @@ sudo apt-get install libsfml-dev
 ## Compile
 
 ```bash
-/usr/bin/g++ -g ./main.cpp -o ./main -lsfml-graphics -lsfml-window -lsfml-system
+git clone https://github.com/zaanposni/pathfinding-visualizer.git
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 ## Usage
@@ -39,7 +43,7 @@ OPTIONS:
       --saveat=[saveat]                 specify a path to save the new painted
                                         grid to
       --fps=[framerate],
-      --framerate=[framerate]           specify sleep time for each step
+      --framerate=[framerate]           specify sleep time for each step in milliseconds
 ```
 
 Note: You cannot use both parameters at once, as the size is saved in the save file.
@@ -51,6 +55,6 @@ After painting the grid, the programm saves your grid configuration to a save fi
 If this file already exists it does not get overwritten.<br/>
 Specify a file to open on startup and load a saved grid:
 ```bash
-./main --savefile examplegrid.txt
+./pathfinding --savefile examplegrid.txt
 ```
 If you have downloaded the repository the file "examplegrid.txt" holds the config for the grid you can see above.
