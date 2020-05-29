@@ -1,10 +1,12 @@
-#ifndef Pathfinding
-#define Pathfinding
+#ifndef WINDOWHANDLER
+#define WINDOWHANDLER
+
 
 #include <SFML/Graphics.hpp>
-#include "2dArray.h"
+#include "grid.h"
 
-class CustomWindow
+
+class WindowHandler
 {
     private:
         void init()
@@ -34,10 +36,10 @@ class CustomWindow
         int size;
         int size_of_pixel;
         float offset;
-        Grid::CustomGrid startGrid;
+        Grid startGrid;
 
-        CustomWindow() { }
-        CustomWindow(int _size, int _size_of_pixel, float _offset, Grid::CustomGrid _startGrid) 
+        WindowHandler() { }
+        WindowHandler(int _size, int _size_of_pixel, float _offset, Grid _startGrid) 
         {
             size = _size;
             size_of_pixel = _size_of_pixel;

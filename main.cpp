@@ -6,8 +6,8 @@
 #include <fstream>
 #include <string>
 
-#include "customWindow.h"
-#include "2dArray.h"
+#include "windowhandler.h"
+#include "grid.h"
 #include "astar.h"
 
 const int default_size = 30; // size x size field
@@ -17,7 +17,7 @@ int sleepMilliSecondsPerStep = 50;
 std::string save_to_file = "newgrid.txt";
 
 
-void save_grid_to_file(Grid::CustomGrid _grid)
+void save_grid_to_file(Grid _grid)
 {
 		// if saved grid does not exists save new grid to file
 		std::ifstream f(save_to_file);
@@ -54,7 +54,7 @@ bool is_number(const std::string &s)
 int startPathfinding(int size)
 {
 	std::cout << "Creating new grid with size " << size << std::endl;
-	Pathfinding::CustomWindow window(size, size_of_pixel, offset, Grid::CustomGrid(size));
+	WindowHandler window(size, size_of_pixel, offset, Grid(size));
 
 	std::cout << "Please enter start: " << std::endl;
 	Node start = window.getMouseClick(true);
@@ -83,7 +83,7 @@ int startPathfinding(int size)
 
 	save_grid_to_file(window.startGrid);
 
-	Astar::AstarPathfinding pathfinder(size, window.startGrid);
+	Astar pathfinder(size, window.startGrid);
 
 	std::cout << "Starting pathfinding. Cancel by pressing space." << std::endl;
 	pathfinder.FindPath(window.startGrid.startNode, window.startGrid.targetNode, window, sleepMilliSecondsPerStep);
@@ -128,7 +128,7 @@ int startPathfinding(std::string filePath)
 		break;
 	}
 
-	Pathfinding::CustomWindow window(size, size_of_pixel, offset, Grid::CustomGrid(size));
+	WindowHandler window(size, size_of_pixel, offset, Grid(size));
 
 	std::cout << "Opening configuration from file: " << filePath << std::endl;
 	std::ifstream infile2(filePath);
@@ -165,7 +165,7 @@ int startPathfinding(std::string filePath)
 		counter++;
 	}
 
-	Astar::AstarPathfinding pathfinder(size, window.startGrid);
+	Astar pathfinder(size, window.startGrid);
 
 	std::cout << "Starting pathfinding. Cancel by pressing space." << std::endl;
 	pathfinder.FindPath(window.startGrid.startNode, window.startGrid.targetNode, window, sleepMilliSecondsPerStep);

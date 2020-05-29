@@ -1,11 +1,11 @@
-#ifndef Grid
-#define Grid
+#ifndef GRID
+#define GRID
 
 #include <iostream>
 #include "node.h"
 
 
-class CustomGrid
+class Grid
 {   
     private:
         Node *values;
@@ -15,8 +15,8 @@ class CustomGrid
         Node startNode;
         Node targetNode;
         std::vector<Node> border;
-        CustomGrid() { }
-        CustomGrid(int _size)
+        Grid() { }
+        Grid(int _size)
         {
             size = _size;
             values = new Node[size*size];
