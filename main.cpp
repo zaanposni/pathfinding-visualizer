@@ -183,7 +183,7 @@ int main(int argc, char *argv[])
 	args::ValueFlag<int> _size(parser, "size", "Set the size of a new created grid", {'s', "size"});
 	args::ValueFlag<std::string> _savefile(parser, "savefile", "specify a path to a loadable savefile", {'f', "savefile"});
 	args::ValueFlag<std::string> _saveat(parser, "saveat", "specify a path to save the new painted grid to", {"saveat"});
-	args::ValueFlag<int> _framerate(parser, "framerate", "specify sleep time for each step", {"fps", "framerate"});
+	args::ValueFlag<int> _framerate(parser, "framerate", "specify sleep time for each step in milliseconds", {"fps", "framerate"});
     args::CompletionFlag completion(parser, {"complete"});
 	try
     {
