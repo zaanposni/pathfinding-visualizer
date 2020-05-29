@@ -1,22 +1,22 @@
-#ifndef Astar
-#define Astar
+#ifndef ASTAR
+#define ASTAR
 
 #include <algorithm>
 #include "vector"
 #include <unistd.h>
 
-#include "2dArray.h"
-#include "customWindow.h"
+#include "grid.h"
+#include "windowhandler.h"
 
-class AstarPathfinding
+class Astar
 {
     private:
         int size;
-        Grid::CustomGrid grid;
+        Grid grid;
     
     public:
 
-        AstarPathfinding(int _size, Grid::CustomGrid _grid)
+        Astar(int _size, Grid _grid)
         {
             size = _size;
             grid = _grid;
@@ -34,7 +34,7 @@ class AstarPathfinding
             return 14 * distanceX + 10 * (distanceY - distanceX);
         }
 
-        void FindPath(Node startPos, Node targetPos, CustomWindow window, int sleepMilliSecondsPerStep=0)
+        void FindPath(Node startPos, Node targetPos, WindowHandler window, int sleepMilliSecondsPerStep=0)
         {
             std::vector< Node > openSet;
             std::vector< Node > closedSet;

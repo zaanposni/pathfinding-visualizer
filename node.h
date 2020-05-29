@@ -1,6 +1,5 @@
-#ifndef Grid
-#define Grid
-#endif
+#ifndef NODE
+#define NODE
 
 #include <iostream>
 
@@ -44,3 +43,4 @@ class Node
 };
 
 
+#endif
